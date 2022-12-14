@@ -1,0 +1,23 @@
+{
+  "name": "file-compressor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shivam907/file-compressor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shivam907/file-compressor/issues"
+  },
+  "homepage": "https://github.com/shivam907/file-compressor#readme",
+  "dependencies": {
+    "change-pdf": "^1.0.11",
+    "convertapi": "^1.11.2"
+  }
+}
