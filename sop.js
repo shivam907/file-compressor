@@ -214,7 +214,7 @@ const fs = require("fs");
 // // Save the new PDF
 // pdf.save("compressed.pdf");
 var changePdf = require("change-pdf");
-const input = __dirname + "/math.pdf";
+const input = __dirname + "/cez.pdf";
 
-changePdf.compressPdf(input, __dirname + "/cez1.pdf");
-fs.unlinkSync(input);
+// fs.unlinkSync(__dirname + "/moo.pdf");
+changePdf.compressPdf(input, __dirname + "/moo.pdf");
