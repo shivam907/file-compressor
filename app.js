@@ -2,7 +2,7 @@ const express = require("express");
 const multer = require("multer");
 const path = require("path");
 const app = express();
-const port = 3008;
+// const port = 3008;
 const changePdf = require("change-pdf");
 
 const upload = multer({
@@ -52,6 +52,6 @@ app.get("/download", (req, res) => {
     }
   });
 });
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+app.listen(process.env.PORT || 3008, () => {
+  console.log(`Server is running on port `);
 });
