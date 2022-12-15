@@ -81,7 +81,7 @@ function base64ToArrayBuffer(base64) {
   //   }
   //   console.log("going");
   //   return bytes.buffer;
-  var byteArray = Base64Binary.decodeArrayBuffer(base64);
+  var byteArray = Base64Binary.decode(base64);
   return byteArray;
   //   return decodeURIComponent(escape(window.atob(base64)));
 }
@@ -110,15 +110,18 @@ document.querySelector(".files").addEventListener("click", () => {
 
     //   console.log(file);
     console.log("yes");
-    var downloadedFile = base64ToArrayBuffer(file);
+    var downloadedFile = base64ToArrayBuffer(atob(file));
     console.log("hmm", downloadedFile);
     // var downloadedFile = new Uint8Array(file);
     var downloadLink = document.createElement("a");
     downloadLink.target = "_blank";
     downloadLink.download = "name_to_give_saved_file.pdf";
-    console.log(downloadedFile.data);
+    console.log(downloadedFile.buffer[3]);
     // convert downloaded data to a Blob
-    var blob = new Blob([downloadedFile], { type: "application/pdf" });
+    var blob = new Blob([downloadedFile.buffer[3]], {
+      type: "application/pdf",
+    });
+    // var blob = new Blob([file], { type: "application/pdf" });
 
     // create an object URL from the Blob
     var URL = window.URL || window.webkitURL;
